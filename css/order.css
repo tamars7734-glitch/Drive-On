@@ -1,0 +1,126 @@
+/* עיצוב ייחודי לדף ההזמנה */
+form {
+    /* flex: מסדר את הילדים בשורה/עמודה וגמיש לגודל המסך */
+    display: flex;
+    /* flex-direction: כיוון הסידור: row=שורה, column=עמודה (פריטים אחד מתחת לשני) */
+    flex-direction: column;
+    /* gap: רווח קבוע בין פריטי flex/grid. דוגמה: gap:20px */
+    gap: 1rem;
+}
+
+fieldset {
+    border: 2px solid var(--steel);
+    /* border-radius: פינות מעוגלות */
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    /* flex-wrap: wrap = פריטים שלא נכנסים יורדים לשורה חדשה, כמו כרטיסי הרכבים */
+    flex-wrap: wrap;
+    /* gap: רווח קבוע בין פריטי flex/grid. דוגמה: gap:20px */
+    gap: 1rem;
+}
+
+legend {
+    background: var(--ink);
+    color: #fff;
+    padding: 0 1rem;
+    /* border-radius: פינות מעוגלות. 50% = עיגול */
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+label {
+    display: flex;
+    /* flex-direction: כיוון הסידור: row=שורה, column=עמודה (פריטים אחד מתחת לשני) */
+    flex-direction: column;
+    width: 48%;
+    font-weight: 700;
+}
+
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+    /* flex-direction: כיוון הסידור: row=שורה, column=עמודה (פריטים אחד מתחת לשני) */
+    flex-direction: row;
+    align-items: center;
+    /* gap: רווח קבוע בין פריטי flex/grid. דוגמה: gap:20px */
+    gap: .5rem;
+    width: auto;
+}
+
+input,
+select,
+textarea {
+    font: inherit;
+    padding: .55rem;
+    border: 2px solid #c6ccd8;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+input[type="color"] {
+    padding: 0;
+    height: 2.6rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    /* accent-color: צבע של תיבות סימון וכפתורי רדיו בטופס */
+    accent-color: var(--orange);
+}
+
+input[type="range"] {
+    /* accent-color: צבע של תיבות סימון וכפתורי רדיו בטופס */
+    accent-color: var(--orange);
+    padding: 0;
+}
+
+input[type="file"]::file-selector-button {
+    font: inherit;
+    background: var(--ink);
+    color: #fff;
+    border: 0;
+    /* border-radius: פינות מעוגלות. 50% = עיגול */
+    border-radius: 8px;
+    padding: .3rem .8rem;
+    margin-left: .6rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    /* outline: קו מסביב לשדה בזמן שלוחצים עליו (פוקוס) */
+    outline: 3px solid var(--orange);
+    border-color: transparent;
+}
+
+input:valid:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]) {
+    border-color: #2fa36b;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #d62839;
+}
+
+form div {
+    display: flex;
+    /* gap: רווח קבוע בין פריטי flex/grid. דוגמה: gap:20px */
+    gap: 1rem;
+}
+
+button[type="reset"] {
+    background: var(--steel);
+    color: var(--ink);
+}
+
+/* media query: העיצוב שבתוך הבלוק פועל רק כשהמסך צר מהרוחב שנקבע (טלפון / טאבלט) */
+@media (max-width: 800px) {
+    label {
+        width: 100%;
+    }
+    form div {
+        /* flex-direction: כיוון הסידור: row=שורה, column=עמודה (פריטים אחד מתחת לשני) */
+        flex-direction: column;
+    }
+}

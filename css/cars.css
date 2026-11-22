@@ -1,0 +1,58 @@
+/* עיצוב ייחודי לדף רכבים קטנים ומשפחתיים */
+.intro {
+    border-right: 8px solid var(--orange);
+}
+
+table {
+    width: 100%;
+    /* border-collapse: collapse = מאחד קווים כפולים בטבלה לקו אחד */
+    border-collapse: collapse;
+    margin-top: .6rem;
+    /* overflow: hidden = מסתיר תוכן שחורג מהגבולות */
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+caption {
+    font-weight: 800;
+    text-align: right;
+    padding-bottom: .5rem;
+}
+
+th,
+td {
+    padding: .6rem .8rem;
+    text-align: right;
+}
+
+thead th {
+    background: var(--ink);
+    color: #fff;
+}
+
+/* nth-child(even) = סלקטור מתקדם: בוחר כל שורה זוגית בטבלה (פסים לסירוגין) */
+tbody tr:nth-child(even) {
+    background: var(--steel);
+}
+
+tbody tr:hover {
+    background: #ffe3cf;
+}
+
+tbody th {
+    color: var(--orange);
+}
+
+tfoot td {
+    font-size: .9rem;
+    color: var(--muted);
+}
+
+/* media query: העיצוב שבתוך הבלוק פועל רק כשהמסך צר מהרוחב שנקבע (טלפון / טאבלט) */
+@media (max-width: 800px) {
+    table {
+        display: block;
+        /* overflow-x: auto = פס גלילה לרוחב כשהתוכן רחב מדי (טבלה בטלפון) */
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DriveOn - השכרת רכבים בלי הפתעות">
+    <title>הזמנת רכב | DriveOn – השכרת רכבים</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" title="חזרה לדף הבית">
+            <img src="../assets/images/logo.svg" alt="לוגו">
+            <h1>DriveOn</h1>
+        </a>
+        <p>הבית להשכרת רכבים</p>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <nav aria-label="תפריט ראשי">
+                <ul>
+                    <li><a href="../index.html">בית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="cars.html">קטנים ומשפחתיים</a></li>
+                    <li><a href="premium.html">SUV ויוקרה</a></li>
+                    <li><a href="order.html" aria-current="page">הזמנת רכב</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section>
+                <h2>הזמנת רכב</h2>
+                <p>ממלאים פרטים ואנחנו מכינים את הרכב. <strong>אין תשלום בשלב זה.</strong></p>
+                <form action="thanks.html" method="get">
+                    <fieldset>
+                        <legend>פרטי הנהג</legend>
+                        <label>שם מלא<input type="text" name="name" required minlength="2" placeholder="לדוגמה: דנה כהן"></label>
+                        <label>אימייל<input type="email" name="email" required placeholder="name@example.com"></label>
+                        <label>טלפון נייד<input type="tel" name="phone" required pattern="05[0-9]{8}" placeholder="0501234567" title="מספר נייד בן 10 ספרות"></label>
+                        <label>גיל הנהג<input type="number" name="age" min="21" max="99" required placeholder="מינימום 21"></label>
+                        <label>מספר רישיון נהיגה<input type="text" name="license" required pattern="[0-9]{7,9}" placeholder="7–9 ספרות" title="7 עד 9 ספרות"></label>
+                        <label>צילום רישיון<input type="file" name="licensefile" accept="image/*,.pdf"></label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>פרטי ההשכרה</legend>
+                        <label>סניף איסוף
+                            <input list="branches" name="branch" required placeholder="בחרו סניף">
+                            <datalist id="branches">
+                                <option value="בני ברק"></option>
+                                <option value="תל אביב"></option>
+                                <option value="נתב״ג"></option>
+                                <option value="חיפה"></option>
+                                <option value="ירושלים"></option>
+                            </datalist>
+                        </label>
+                        <label>סוג רכב
+                            <select name="car">
+                                <optgroup label="קטנים ומשפחתיים">
+                                    <option>קטן וחסכוני</option>
+                                    <option>משפחתי</option>
+                                    <option>היברידי</option>
+                                    <option>חשמלי</option>
+                                </optgroup>
+                                <optgroup label="SUV ויוקרה">
+                                    <option>SUV</option>
+                                    <option>SUV 7 מושבים</option>
+                                    <option>סדאן יוקרה</option>
+                                    <option>מיניבוס</option>
+                                </optgroup>
+                            </select>
+                        </label>
+                        <label>תאריך איסוף<input type="date" name="from" required></label>
+                        <label>תאריך החזרה<input type="date" name="to" required></label>
+                        <label>שעת איסוף<input type="time" name="time" min="07:00" max="20:00" required></label>
+                        <label>צבע מועדף<input type="color" name="color" value="#ff6a00"></label>
+                        <label>ק״מ משוער ליום<input type="range" name="km" min="50" max="500" step="50" value="150"></label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>תוספות וביטוח</legend>
+                        <label><input type="checkbox" name="gps"> ניווט GPS</label>
+                        <label><input type="checkbox" name="seat"> מושב בטיחות לילד</label>
+                        <label><input type="radio" name="insurance" value="basic" checked> ביטוח בסיסי</label>
+                        <label><input type="radio" name="insurance" value="extended"> ביטוח מורחב</label>
+                        <label><input type="radio" name="insurance" value="full"> ביטוח מלא</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>הערות</legend>
+                        <label>בקשות מיוחדות<textarea name="notes" rows="4"></textarea></label>
+                        <label><input type="checkbox" name="terms" required> קראתי ואני מאשר/ת את תנאי ההשכרה</label>
+                    </fieldset>
+
+                    <div>
+                        <button type="submit">שליחת הזמנה</button>
+                        <button type="reset">איפוס הטופס</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><small>&copy; כל הזכויות שמורות DriveOn – השכרת רכבים</small></p>
+        <address>
+            <a href="tel:0501234567">050-1234567</a> | 
+            <a href="mailto:info@driveon.example"> info@driveon.example</a>
+        </address>
+        <a href="../pages/about.html">אודותינו</a>
+    </footer>
+
+</body>
+</html>

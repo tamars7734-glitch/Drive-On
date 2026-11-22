@@ -1,0 +1,34 @@
+/* עיצוב ייחודי לדף האישור */
+.thanks {
+    text-align: center;
+    padding: 2.5rem 1rem !important;
+}
+
+.thanks p:first-of-type {
+    font-size: 3rem;
+    /* animation: מפעיל @keyframes: שם, משך, חזרות. דוגמה: animation: fade 1s infinite */
+    animation: pop .8s cubic-bezier(.3, 1.6, .5, 1);
+}
+
+/* keyframes: הגדרת שלבי האנימציה - from = התחלה, to = סוף */
+@keyframes pop {
+    from {
+        /* transform: הזזה / הגדלה / סיבוב של אלמנט בלי להשפיע על שאר הדף */
+        transform: scale(0);
+    }
+    to {
+        /* transform: שינוי צורה בלי להזיז אלמנטים אחרים. scale(1.05)=הגדלה, rotate(5deg)=סיבוב */
+        transform: scale(1);
+    }
+}
+
+.thanks h2::after {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 800px) {
+    .thanks p:first-of-type {
+        font-size: 2rem;
+    }
+}

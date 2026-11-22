@@ -1,0 +1,54 @@
+/* עיצוב ייחודי לדף SUV ויוקרה */
+.intro {
+    background: var(--ink) !important;
+    color: #fff;
+}
+
+.intro h2 {
+    color: var(--orange);
+}
+
+main aside {
+    background: #fff3e8;
+    border-right: 6px solid var(--orange);
+    padding: 1rem;
+    /* border-radius: פינות מעוגלות. 50% = עיגול */
+    border-radius: 12px;
+    /* position: relative = עוגן לילדים; absolute = מיקום מדויק בתוך העוגן */
+    position: static;
+    width: 100%;
+}
+
+dl {
+    /* flex: מסדר את הילדים בשורה/עמודה וגמיש לגודל המסך */
+    display: flex;
+    /* flex-wrap: wrap = פריטים שלא נכנסים יורדים לשורה חדשה, כמו כרטיסי הרכבים */
+    flex-wrap: wrap;
+    /* gap: רווח קבוע בין פריטי flex/grid. דוגמה: gap:20px */
+    gap: 1%;
+}
+
+dt {
+    width: 100%;
+    font-weight: 800;
+    color: var(--orange);
+    padding-top: .5rem;
+}
+
+dd {
+    width: 100%;
+    margin: 0 0 .3rem;
+}
+
+dt::before {
+    /* content: הטקסט/צורה ש-::before או ::after מוסיפים. "" = צורה ריקה לעיצוב */
+    content: "■ ";
+    font-size: .7em;
+}
+
+/* media query: העיצוב שבתוך הבלוק פועל רק כשהמסך צר מהרוחב שנקבע (טלפון / טאבלט) */
+@media (max-width: 800px) {
+    main aside {
+        padding: .6rem;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DriveOn - השכרת רכבים בלי הפתעות">
+    <title>אודות | DriveOn – השכרת רכבים</title>
+    <link rel="icon" href="../favicon.ico">
+    <!-- preconnect + קישור לגוגל פונטס: טעינת הגופן Heebo (גופן מתקדם) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" title="חזרה לדף הבית">
+            <img src="../assets/images/logo.svg" alt="לוגו">
+            <h1>DriveOn</h1>
+        </a>
+        <p>הבית להשכרת רכבים</p>
+    </header>
+
+    <!-- layout: מעטפת שמסדרת את התפריט הצדדי ואת התוכן זה לצד זה בעזרת flex -->
+    <div class="layout">
+        <aside>
+            <!-- aria-label: תיאור התפריט עבור קוראי מסך (נגישות) -->
+            <nav aria-label="תפריט ראשי">
+                <ul>
+                    <li><a href="../index.html">בית</a></li>
+                    <li><a href="about.html" aria-current="page">אודות</a></li>
+                    <li><a href="cars.html">קטנים ומשפחתיים</a></li>
+                    <li><a href="premium.html">SUV ויוקרה</a></li>
+                    <li><a href="order.html">הזמנת רכב</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <article>
+                <h2>מי אנחנו</h2>
+                <img src="../assets/images/about1.jpg" alt="סניף">
+                <p>DriveOn התחילה ב-<time datetime="2014">2014</time> עם <strong>חמישה רכבים</strong> וסניף אחד. היום יש לנו צי של יותר מארבעים רכבים, וכלל אחד: <em>המחיר שרואים בהזמנה הוא המחיר שמשלמים בסוף.</em></p>
+                <hr>
+                <p>יש שאלה? <a href="#faq">קפצו לשאלות הנפוצות</a>.</p>
+            </article>
+
+            <section>
+                <h2>למה לבחור בנו</h2>
+                <ul>
+                    <li>ביטוח מקיף כלול בכל מחיר</li>
+                    <li>ק״מ חופשי בכל הרכבים</li>
+                    <li>ניווט <abbr title="Global Positioning System">GPS</abbr> לפי בקשה</li>
+                    <li>רכבים עד שלוש שנים</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>שעות פעילות</h2>
+                <ul>
+                    <li>ראשון עד חמישי: <time datetime="07:00">7:00</time>–<time datetime="20:00">20:00</time></li>
+                    <li>שישי: <time datetime="07:00">7:00</time>–<time datetime="14:00">14:00</time></li>
+                    <li>מוצאי שבת: <time datetime="20:00">20:00</time>–<time datetime="23:00">23:00</time></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 id="faq">שאלות נפוצות</h2>
+                <!-- details + summary: תיבה נפתחת. summary הוא הכותרת שלוחצים עליה -->
+                <details>
+                    <summary>מה גיל הנהג המינימלי?</summary>
+                    <p>21, עם רישיון בתוקף של שנתיים לפחות.</p>
+                </details>
+                <details>
+                    <summary>אפשר לבטל הזמנה?</summary>
+                    <p>כן, בחינם עד 24 שעות לפני האיסוף.</p>
+                </details>
+                <details>
+                    <summary>האם הביטוח כלול?</summary>
+                    <p>כן, ביטוח מקיף כלול בכל מחיר שמופיע באתר.</p>
+                </details>
+            </section>
+
+            <!-- אזור הורדת המחירון -->
+            <section>
+                <h2>מחירון השכרה</h2>
+                <p>כל המחירים לכל סוגי הרכבים, במסמך אחד להורדה.</p>
+                <a class="btn" href="../assets/files/pricelist.pdf" download="DriveOn-pricelist.pdf">הורדת המחירון (PDF)</a>
+                <a href="../assets/files/pricelist.pdf" target="_blank">צפייה במחירון</a>
+            </section>
+
+            <section>
+                <h2>איך מגיעים</h2>
+                <address>
+                    הסניף הראשי: רחוב ז'בוטינסקי 100, בני ברק
+                    <br> טלפון: <a href="tel:0501234567">050-1234567</a><br>
+                    <a href="mailto:info@driveon.example"> info@driveon.example</a>
+                </address>
+                <iframe title="מפת הסניף הראשי" src="https://www.google.com/maps?q=Bnei+Brak&amp;output=embed" loading="lazy"></iframe>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><small>&copy; כל הזכויות שמורות ל-DriveOn – השכרת רכבים</small></p>
+        <address>
+            <a href="tel:0501234567">050-1234567</a> | 
+            <a href="mailto:info@driveon.example"> info@driveon.example</a>
+        </address>
+        <a href="../pages/about.html">אודותינו</a>
+    </footer>
+
+</body>
+</html>
